@@ -1,0 +1,695 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- STRUKTURA (CONTAINER) --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main.container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+/* --- NAVIGACIJA (NAVBAR) --- */
+.navbar {
+    background-color: #000000;
+    border-bottom: 1px solid #333333;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    letter-spacing: 1px;
+}
+
+.nav-search-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 600px;
+    gap: 15px;
+}
+
+.search-form {
+    display: flex;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- FORME I INPUTI --- */
+.form-input {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #1e1e1e;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+}
+
+/* --- GUMBI (BUTTONS) --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000000;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* --- DROPDOWN ("PRATIM") --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    min-width: 260px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #333333;
+    color: #007bff;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #282828;
+}
+
+.dropdown-empty {
+    padding: 15px;
+    color: #777777;
+    font-size: 0.85rem;
+}
+
+.avatar-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- NASLOV STRANICE --- */
+.page-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* --- KARTICE I GRID (PODCAST MREŽA) --- */
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.podcast-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.podcast-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+
+
+/* --- ZASEBNE DODATNE NAVIGACIJSKE KLASE --- */
+.nav-text {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+}
+
+/* --- STATISTIČKE KARTICE --- */
+.stats-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-purple {
+    background: linear-gradient(45deg, #6200EA, #4500a0);
+}
+
+.card-cyan {
+    background: linear-gradient(45deg, #03DAC6, #019b8d);
+    color: #000000;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* --- ZAGLAVLJE SEKCIJE UREĐIVANJA --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+.btn-sm {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #333333;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.custom-table th, 
+.custom-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333333;
+}
+
+.custom-table th {
+    background-color: #171717;
+    color: #007bff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #252525;
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.custom-modal {
+    margin: auto;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+
+.custom-modal::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 320px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #333333;
+}
+
+.modal-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: #aaaaaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal-btn:hover {
+    color: #ffffff;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #333333;
+}
+
+/* Pomoćne klase unutar formi */
+.mb-3 { margin-bottom: 15px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-label { font-size: 0.85rem; color: #aaaaaa; }
+
+.form-select {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #1e1e1e;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    color: #ffffff;
+    outline: none;
+}
+.form-select:focus { border-color: #007bff; }
+
+
+/* --- AUTENTIFIKACIJA (LOGIN & REGISTRACIJA) --- */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121212;
+    padding: 20px;
+}
+
+.auth-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.auth-logo {
+    text-align: center;
+    color: #007bff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* --- TAB NAVIGACIJA --- */
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid #333333;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px;
+    color: #aaaaaa;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px; /* Poklapanje s donjim rubom */
+}
+
+.tab-btn:hover {
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+}
+
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #28a745; 
+}
+
+.checkbox-label {
+    font-size: 0.9rem;
+    color: #dddddd;
+    cursor: pointer;
+}
+
+/* --- STRANICA DETALJA PODCASTA (PODCAST DETAILS) --- */
+.details-layout {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.details-sidebar {
+    flex: 1;
+    max-width: 280px;
+    text-align: center;
+}
+
+.details-content {
+    flex: 2;
+}
+
+.details-cover {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.details-title {
+    font-size: 1.8rem;
+    color: #4e8cff; 
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+.text-muted {
+    color: #aaaaaa;
+}
+
+.small {
+    font-size: 0.85rem;
+}
+
+.mt-2 { margin-top: 10px; }
+.mt-3 { margin-top: 15px; }
+
+.divider {
+    border: 0;
+    border-top: 1px solid #222222;
+    margin: 25px 0;
+}
+
+.podcast-info p {
+    font-size: 1.05rem;
+    margin-top: 10px;
+}
+
+/* --- EPIZODE --- */
+.episodes-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.episode-card {
+    background-color: #181818;
+    border: 1px solid #282828;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.episode-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.episode-info h5 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.px-4 {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.reviews-section {
+    margin-top: 15px;
+}
+
+.reviews-heading {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.review-item {
+    background-color: #282828;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 3px solid #4e8cff;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1rem;
+}
+
+.review-author {
+    color: #ffffff;
+}
+
+.review-text {
+    color: #dddddd;
+}
+
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #4e8cff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Forma za pisanje recenzije */
+.review-form {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #333333;
+}
+
+/* Sakrivanje forme po defaultu (zamjena za d-none) */
+.hidden-form {
+    display: none;
+}
+
